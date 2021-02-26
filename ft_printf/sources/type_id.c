@@ -6,7 +6,7 @@
 /*   By: epfennig <epfennig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/26 11:37:50 by epfennig          #+#    #+#             */
-/*   Updated: 2021/02/26 13:13:06 by epfennig         ###   ########.fr       */
+/*   Updated: 2021/02/26 15:37:12 by epfennig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void		minus_0_di(char *nb, int di, t_flags *flags)
 	return ;
 }
 
-void		dot_sup_0_di(char *nb, t_flags *flags)
+void		dot_sup_0_di(int di, char *nb, t_flags *flags)
 {
 	if (flags->dot >= 0)
 	{
@@ -68,6 +68,8 @@ void		dot_sup_0_di(char *nb, t_flags *flags)
 	}
 	else
 	{
+		if (di < 0 && flags->flag_zero == 0)
+			flags->width--;
 		while ((flags->width) - (ft_strlen(nb)) > 0)
 		{
 			if (flags->flag_zero == 1)
@@ -124,7 +126,7 @@ void		ft_type_di(int di, t_flags *flags)
 		minus_1_di(nb, di, flags);
 	if (flags->dot >= 0 && flags->dot < ft_strlen(nb))
 		flags->dot = ft_strlen(nb);
-	dot_sup_0_di(nb, flags);
+	dot_sup_0_di(di, nb, flags);
 	if (flags->flag_minus == 0)
 		minus_0_di(nb, di, flags);
 	free(nb);

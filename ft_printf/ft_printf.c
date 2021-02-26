@@ -6,7 +6,7 @@
 /*   By: epfennig <epfennig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/07 12:59:39 by marvin            #+#    #+#             */
-/*   Updated: 2021/02/26 13:05:13 by epfennig         ###   ########.fr       */
+/*   Updated: 2021/02/26 16:38:02 by epfennig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 ** I used a global variable to make easier
 ** the return value of printf.
 */
-
 int		g_count;
 
 void			ft_putchar(char c)
@@ -43,7 +42,7 @@ int				ft_check_type(va_list args,
 	if (flags->type == 'p')
 		ft_type_p(va_arg(args, unsigned long long int), flags);
 	if (flags->type == '%')
-		ft_putchar('%');
+		ft_type_c('%', flags);
 	return (0);
 }
 

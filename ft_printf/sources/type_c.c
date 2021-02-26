@@ -6,7 +6,7 @@
 /*   By: epfennig <epfennig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/26 12:13:59 by epfennig          #+#    #+#             */
-/*   Updated: 2021/02/26 13:13:05 by epfennig         ###   ########.fr       */
+/*   Updated: 2021/02/26 15:13:20 by epfennig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,22 +15,23 @@
 void		ft_type_c(int argu, t_flags *flags)
 {
 	if (flags->flag_minus == 1)
+	{
 		ft_putchar(argu);
-	if (flags->width > 1)
-	{
-		while (flags->width-- > 1)
-			ft_putchar(' ');
-	}
-	if (flags->star != 0)
-	{
-		while (flags->star-- > 1)
-			ft_putchar(' ');
+		if (flags->width > 1)
+		{
+			while (flags->width-- > 1)
+				ft_putchar(' ');
+		}
 	}
 	if (flags->flag_minus == 0)
-		ft_putchar(argu);
-	if (flags->star < 0)
 	{
-		while (flags->star++ < -2)
-			ft_putchar(' ');
+		while (flags->width-- > 1)
+		{
+			if (flags->flag_zero == 1)
+				ft_putchar('0');
+			else
+				ft_putchar(' ');
+		}
+		ft_putchar(argu);
 	}
 }
