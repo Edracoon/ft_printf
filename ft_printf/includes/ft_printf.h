@@ -6,7 +6,7 @@
 /*   By: epfennig <epfennig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/07 12:58:34 by marvin            #+#    #+#             */
-/*   Updated: 2021/02/26 10:55:29 by epfennig         ###   ########.fr       */
+/*   Updated: 2021/02/26 13:12:54 by epfennig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,15 +36,25 @@ void			ft_type_x1(unsigned int argu, t_flags *flags);
 void			ft_type_u(unsigned int argu, t_flags *flags);
 void			ft_type_p(unsigned long long argu, t_flags *flags);
 
-int				ft_atoi(const char *str);
-char			*ft_itoa(long int n);
-char			*ft_upxtoa(unsigned long long n, int base);
-char			*ft_strdup(char *src);
-
-int				ft_isdigit(int c);
-int				ft_tolower(int c);
-int				ft_strlen(char *str);
 void			ft_putchar(char c);
+
+int				ft_atoi(const char *str);
+int				ft_isdigit(int c);
+char			*ft_itoa(long int n);
 void			ft_putstr(char *str, int len);
+char			*ft_strdup(char *src);
+int				ft_strlen(char *str);
+int				ft_tolower(int c);
+char			*ft_upxtoa(unsigned long long n, int base);
+
+int				find_type(int c);
+int				find_flag(int c);
+int				len_option(const char *str, int i);
+
+void			flag_minus(t_flags *flags);
+void			flag_nombre(char nb, t_flags *flags);
+void			flag_width(va_list args, t_flags *flags);
+int				flag_dot(const char *str, int start,
+				t_flags *flags, va_list args);
 
 #endif

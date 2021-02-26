@@ -5,8 +5,15 @@ OBJ = $(SRCS:.c=.o)
 CFLAGS += -Wall -Wextra -Werror
 
 SRCS =	ft_printf.c \
-		sources/flag1.c \
-		sources/flag2.c \
+		sources/fill_struct.c \
+		sources/finders_utils.c \
+		sources/type_id.c \
+		sources/type_c.c \
+		sources/type_s.c \
+		sources/type_x.c \
+		sources/type_upper_x.c \
+		sources/type_p.c \
+		sources/type_u.c \
 		sources/ft_itoa.c \
 		sources/ft_atoi.c \
 		sources/ft_putstr.c \

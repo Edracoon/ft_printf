@@ -1,25 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   type_p.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: epfennig <epfennig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/18 14:28:05 by epfennig          #+#    #+#             */
-/*   Updated: 2021/02/26 13:13:03 by epfennig         ###   ########.fr       */
+/*   Created: 2021/02/26 12:50:54 by epfennig          #+#    #+#             */
+/*   Updated: 2021/02/26 13:13:07 by epfennig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-int	ft_strlen(char *str)
+void		ft_type_p(unsigned long long argu, t_flags *flags)
 {
-	int i;
+	char	*nb;
+	int		i;
 
-	i = 0;
-	while (str[i] != '\0')
+	i = -1;
+	nb = ft_upxtoa(argu, 16);
+	while (nb[++i])
+		nb[i] = ft_tolower(nb[i]);
+	if (flags->flag_minus == 1)
 	{
-		i++;
+		ft_putstr("0x", 2);
+		ft_putstr(nb, ft_strlen(nb));
 	}
-	return (i);
+	while (flags->width - (ft_strlen(nb) + 2) > 0)
+	{
+		ft_putchar(' ');
+		flags->width--;
+	}
+	if (flags->flag_minus == 0)
+	{
+		ft_putstr("0x", 2);
+		ft_putstr(nb, ft_strlen(nb));
+	}
+	free(nb);
 }

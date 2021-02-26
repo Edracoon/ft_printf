@@ -6,94 +6,23 @@
 /*   By: epfennig <epfennig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/07 12:59:39 by marvin            #+#    #+#             */
-/*   Updated: 2021/02/26 11:19:59 by epfennig         ###   ########.fr       */
+/*   Updated: 2021/02/26 13:05:13 by epfennig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/ft_printf.h"
 
 /*
-** I use a global variable to make easier
+** I used a global variable to make easier
 ** the return value of printf.
 */
 
 int		g_count;
 
-void	ft_putchar(char c)
+void			ft_putchar(char c)
 {
 	write(1, &c, 1);
 	g_count++;
-}
-
-void		flag_minus(t_flags *flags)
-{
-	flags->flag_minus = 1;
-	flags->flag_zero = 0;
-}
-
-void		flag_nombre(char nb, t_flags *flags)
-{
-	if (flags->star == 1)
-		flags->width = 0;
-	flags->width = (flags->width * 10) + (nb - '0');
-}
-
-void		flag_width(va_list args, t_flags *flags)
-{
-	flags->star = 1;
-	flags->width = va_arg(args, int);
-	if (flags->width < 0)
-	{
-		flags->flag_minus = 1;
-		flags->width *= -1;
-	}
-}
-
-int			flag_dot(const char *str, int start,
-			t_flags *flags, va_list args)
-{
-	int i;
-
-	i = start + 1;
-	if (str[i] == '*')
-	{
-		flags->dot = va_arg(args, int);
-		i++;
-	}
-	else
-	{
-		flags->dot = 0;
-		while (ft_isdigit(str[i]))
-			flags->dot = (flags->dot * 10) + (str[i++] - '0');
-	}
-	return (i);
-}
-
-int		find_type(int c)
-{
-	if (c == 'c' || c == 's' || c == 'p' ||
-		c == 'd' || c == 'i' || c == 'u' ||
-		c == 'x' || c == 'X' || c == '%')
-		return (c);
-	else
-		return (0);
-}
-
-int		find_flag(int c)
-{
-	if ((c == '-') || (c == ' ') || (c == '0') ||
-		(c == '.') || (c == '*'))
-		return (c);
-	else
-		return (0);
-}
-
-int		len_option(const char *str, int i)
-{
-	while (str[i] == '.' || str[i] == '-' || str[i] == '*'
-			|| str[i] == '0' || (str[i] >= '0' && str[i] <= '9'))
-		i++;
-	return (i);
 }
 
 int				ft_check_type(va_list args,
@@ -118,7 +47,7 @@ int				ft_check_type(va_list args,
 	return (0);
 }
 
-void		parse_flag(const char *str, int i, va_list args, t_flags *flags)
+void			parse_flag(const char *str, int i, va_list args, t_flags *flags)
 {
 	while (str[i])
 	{
@@ -145,7 +74,7 @@ void		parse_flag(const char *str, int i, va_list args, t_flags *flags)
 	ft_check_type(args, flags);
 }
 
-t_flags				*struct_init(t_flags *flags)
+t_flags			*struct_init(t_flags *flags)
 {
 	flags->flag_minus = 0;
 	flags->flag_zero = 0;
@@ -182,13 +111,3 @@ int				ft_printf(const char *str, ...)
 	va_end(args);
 	return (g_count);
 }
-/*
-int				main(void)
-{
-	printf("\n***************************************************************\n*\n");
-	printf("*   PRINTF    :  0*%-*i*0 0*%0*i*0\n", 21, 1021, 21, -1011);
-	ft_printf("*\n*   FT_PRINTF :  0*%-*i*0 0*%0*i*0\n*", 21, 1021, 21, -1011);
-	printf("\n***************************************************************\n\n");
-	return (0);
-}
-*/

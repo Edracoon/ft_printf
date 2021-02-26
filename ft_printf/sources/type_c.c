@@ -1,25 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   type_c.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: epfennig <epfennig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/18 14:28:05 by epfennig          #+#    #+#             */
-/*   Updated: 2021/02/26 13:13:03 by epfennig         ###   ########.fr       */
+/*   Created: 2021/02/26 12:13:59 by epfennig          #+#    #+#             */
+/*   Updated: 2021/02/26 13:13:05 by epfennig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-int	ft_strlen(char *str)
+void		ft_type_c(int argu, t_flags *flags)
 {
-	int i;
-
-	i = 0;
-	while (str[i] != '\0')
+	if (flags->flag_minus == 1)
+		ft_putchar(argu);
+	if (flags->width > 1)
 	{
-		i++;
+		while (flags->width-- > 1)
+			ft_putchar(' ');
 	}
-	return (i);
+	if (flags->star != 0)
+	{
+		while (flags->star-- > 1)
+			ft_putchar(' ');
+	}
+	if (flags->flag_minus == 0)
+		ft_putchar(argu);
+	if (flags->star < 0)
+	{
+		while (flags->star++ < -2)
+			ft_putchar(' ');
+	}
 }
