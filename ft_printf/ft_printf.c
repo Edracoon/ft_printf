@@ -6,11 +6,11 @@
 /*   By: epfennig <epfennig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/07 12:59:39 by marvin            #+#    #+#             */
-/*   Updated: 2021/02/26 11:01:39 by epfennig         ###   ########.fr       */
+/*   Updated: 2021/02/26 11:19:59 by epfennig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
+#include "includes/ft_printf.h"
 
 /*
 ** I use a global variable to make easier

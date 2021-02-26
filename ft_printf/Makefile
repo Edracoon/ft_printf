@@ -4,7 +4,7 @@ OBJ = $(SRCS:.c=.o)
 
 CFLAGS += -Wall -Wextra -Werror
 
-SRCS =	sources/ft_printf.c \
+SRCS =	ft_printf.c \
 		sources/flag1.c \
 		sources/flag2.c \
 		sources/ft_itoa.c \
