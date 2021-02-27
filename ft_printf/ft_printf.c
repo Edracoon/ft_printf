@@ -114,14 +114,15 @@ int				ft_printf(const char *str, ...)
 int	main(void)
 {
 	int a = -2;
-	int b = -2;
+	int b;
 
-	while (a < 5)
+	while (a < 3)
 	{
-		printf("Boucle avec a = %i\n", a);
+		printf("Boucle avec a = %i\n\n", a);
+		b = -2;
 		while (b < 5)
 		{
-			printf("Boucle avec b = %i\n", b);
+			printf("Boucle avec b = %i\n\n", b);
 			printf("lui : |%*.*i| |%*.*d| |%*.*d| |%*.*d| |%*.*d| |%*.*d| |%*.*d| |%*.*d|\n", a, b, 8, a, b, -12, a, b, 123456789, a, b, 0, a, b, -12345678, a, b, 'a', a, b, -2147483648, a, b, 2147483647);
 			ft_printf("moi : |%*.*i| |%*.*d| |%*.*d| |%*.*d| |%*.*d| |%*.*d| |%*.*d| |%*.*d|\n\n", a, b, 8, a, b, -12, a, b, 123456789, a, b, 0, a, b, -12345678, a, b, 'a', a, b, -2147483648, a, b, 2147483647);
 			printf("lui : |%-*.*i| |%-*.*d| |%-*.*d| |%-*.*d| |%-*.*d| |%-*.*d| |%-*.*d| |%-*.*d|\n", a, b, 8, a, b, -12, a, b, 123456789, a, b, 0, a, b, -12345678, a, b, 'a', a, b, -2147483648, a, b, 2147483647);
