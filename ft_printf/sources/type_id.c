@@ -23,7 +23,7 @@ void		minus_1_di(char *nb, int di, t_flags *flags)
 		temp = flags->dot;
 		while ((temp - 1) - (ft_strlen(nb) - 1) > 0)
 		{
-			ft_putchar('0');
+			ft_putchar('z');
 			temp--;
 		}
 	}
