@@ -113,7 +113,7 @@ int				ft_printf(const char *str, ...)
 
 int	main(void)
 {
-	printf("lui : |%-2s| |%.s| |%-4s| |%-2.4s| |%-8.12s| |%3s| |%8s| |%---2s| |%.*s| |%.0s| |%.1s| |%.2s| |%.4s| |%.8s|\n", NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, -2, NULL, NULL, NULL, NULL, NULL, NULL);
-	ft_printf("moi : |%-2s| |%.s| |%-4s| |%-2.4s| |%-8.12s| |%3s| |%8s| |%---2s| |%.*s| |%.0s| |%.1s| |%.2s| |%.4s| |%.8s|\n", NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, -2, NULL, NULL, NULL, NULL, NULL, NULL);
+	printf(" lui : %010i, %010d, %010i, %010d\n", -12, -12345678, -36, -21474836);
+	ft_printf("moi : %010i, %010d, %010i, %010d\n", -12, -12345678, -36, -21474836);
 	return (0);
-}
+}*/
