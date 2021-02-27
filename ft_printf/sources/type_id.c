@@ -23,7 +23,7 @@ void		minus_1_di(char *nb, int di, t_flags *flags)
 		temp = flags->dot;
 		while ((temp - 1) - (ft_strlen(nb) - 1) > 0)
 		{
-			ft_putchar('z');
+			ft_putchar('0');
 			temp--;
 		}
 	}
@@ -72,7 +72,7 @@ void		dot_sup_0_di(int di, char *nb, t_flags *flags)
 			flags->width--;
 		while ((flags->width) - (ft_strlen(nb)) > 0)
 		{
-			if (flags->flag_zero == 1)
+			if (flags->flag_zero == 1 && flags->flag_minus == 0)
 				ft_putchar('0');
 			else
 				ft_putchar(' ');
