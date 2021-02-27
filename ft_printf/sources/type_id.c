@@ -93,7 +93,7 @@ int			norme_di(int di, t_flags *flags)
 		}
 		return (0);
 	}
-	if (di < 0 && (flags->dot >= 0 || flags->flag_zero == 1))
+	if (di < 0 && (flags->dot >= 0 || flags->flag_zero == 1 || flags->flag_minus == 1))
 	{
 		if (flags->flag_zero == 1 && flags->dot == -1)
 			ft_putchar('-');

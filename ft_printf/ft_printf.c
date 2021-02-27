@@ -110,3 +110,10 @@ int				ft_printf(const char *str, ...)
 	va_end(args);
 	return (g_count);
 }
+/*
+int	main(void)
+{
+	printf("%-i, %-d, %-i, %-d\n", -12, -12345678, -36, -21474836);
+	ft_printf("%-i, %-d, %-i, %-d\n", -12, -12345678, -36, -21474836);
+	return (0);
+}*/
