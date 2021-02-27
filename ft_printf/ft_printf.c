@@ -110,7 +110,7 @@ int				ft_printf(const char *str, ...)
 	va_end(args);
 	return (g_count);
 }
-
+/*
 int	main(void)
 {
 	int a = -4;
@@ -132,3 +132,4 @@ int	main(void)
 	//ft_printf("moi : %010i, %010d, %010i, %010d\n", -12, -12345678, -36, -21474836);
 	return (0);
 }
+*/
