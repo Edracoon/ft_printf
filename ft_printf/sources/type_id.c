@@ -36,9 +36,9 @@ void		minus_0_di(char *nb, int di, t_flags *flags)
 	int		temp;
 
 	if (di < 0 && (flags->dot >= 0 ||
-		(!(flags->flag_zero == 1 && flags->dot == -1))))
+		(!(flags->flag_zero == 1 && flags->dot >= 0))))
 	{
-		ft_putchar('z');
+		ft_putchar('-');
 	}
 	else if (di < 0 && flags->dot > ft_strlen(nb))
 		ft_putchar(' ');
