@@ -32,8 +32,8 @@ void		flag_width(va_list args, t_flags *flags)
 	if (flags->width < 0)
 	{
 		flags->flag_minus = 1;
-		flags->flag_zero = 0;
 		flags->width *= -1;
+		flags->flag_zero = 0;
 	}
 }
 
