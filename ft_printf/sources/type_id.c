@@ -73,7 +73,7 @@ void		dot_sup_0_di(int di, char *nb, t_flags *flags)
 		while ((flags->width) - (ft_strlen(nb)) > 0)
 		{
 			if (flags->flag_zero == 1)
-				ft_putchar('0');
+				ft_putchar('z');
 			else
 				ft_putchar(' ');
 			flags->width--;
