@@ -56,10 +56,13 @@ void		minus_0_di(char *nb, int di, t_flags *flags)
 
 void		dot_sup_0_di(int di, char *nb, t_flags *flags)
 {
+	int temp;
+
+	temp = flags->width;
 	if (flags->dot >= 0)
 	{
 		flags->width -= flags->dot;
-		while (flags->width > 0 && (!(flags->dot < flags->width)))
+		while (flags->width > 0 && (!(flags->dot < temp)))
 		{
 			ft_putchar('b');
 			flags->width--;
