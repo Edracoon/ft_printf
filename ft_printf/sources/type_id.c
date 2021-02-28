@@ -55,6 +55,7 @@ void		ft_type_di(int di, t_flags *flags)
 			}
 		}
 	}
+	printf(" ici = z = %i", flags->flag_zero);
 	if (di < 0 && (!(flags->width > size_ap && flags->flag_zero == 1
 		&& flags->dot < 0 && flags->flag_minus == 0)))
 		ft_putchar('-');
