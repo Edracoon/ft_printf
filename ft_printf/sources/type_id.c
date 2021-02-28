@@ -99,7 +99,6 @@ int			norme_di(int di, t_flags *flags)
 			ft_putchar('-');
 		flags->flag_zero = 1;
 		flags->width--;
-		di = di * -1;
 	}
 	return (1);
 }
