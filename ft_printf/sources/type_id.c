@@ -16,7 +16,7 @@ void		minus_1_di(char *nb, int di, t_flags *flags)
 {
 	int		temp;
 
-	if (di < 0 && flags->dot >= 0)
+	if (di < 0 && (flags->dot >= 0 || flags->dot < 0))
 		ft_putchar('c');
 	if (flags->dot >= 0)
 	{
