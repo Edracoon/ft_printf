@@ -121,7 +121,7 @@ int	main(void)
 	{
 		printf("Boucle avec a = %i\n\n", a);
 		b = -2;
-		while (b < 5)
+		while (b < 3)
 		{
 			printf("Boucle avec b = %i\n\n", b);
 			printf("lui : |%*.*i| |%*.*d| |%*.*d| |%*.*d| |%*.*d| |%*.*d| |%*.*d|\n", a, b, 8, a, b, -12, a, b, 123456789, a, b, 0, a, b, -12345678, a, b, 'a', a, b, 2147483647);
