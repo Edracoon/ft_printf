@@ -77,4 +77,5 @@ void		ft_type_di(int di, t_flags *flags)
 			flags->width--;
 		}
 	}
+	free(nb);
 }
