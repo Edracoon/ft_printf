@@ -122,8 +122,6 @@ void		ft_type_di(int di, t_flags *flags)
 	}
 	else
 		nb = ft_itoa(di);
-	if (flags->dot <= -1)
-		flags->dot = ft_strlen(nb);
 	if (flags->flag_minus == 1)
 		minus_1_di(nb, di, flags);
 	if (flags->dot >= 0 && flags->dot < ft_strlen(nb))
