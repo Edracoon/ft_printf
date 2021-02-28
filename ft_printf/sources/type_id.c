@@ -99,7 +99,6 @@ int			norme_di(int di, t_flags *flags)
 			ft_putchar('-');
 		flags->flag_zero = 1;
 		flags->width--;
-		di = di * -1;
 	}
 	return (di);
 }
@@ -108,7 +107,7 @@ void		ft_type_di(int di, t_flags *flags)
 {
 	char	*nb;
 
-	if ((di = norme_di(di, flags)) == 0)
+	if (norme_di(di, flags) == 0)
 		return ;
 	if (di < 0)
 	{
