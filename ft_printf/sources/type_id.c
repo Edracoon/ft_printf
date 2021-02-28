@@ -36,7 +36,7 @@ void		ft_type_di(int di, t_flags *flags)
 		size_ap = 0;
 	if (flags->flag_minus == 0 && flags->width > size_ap)
 	{
-		if (flags->flag_zero == 1 && flags->dot < 0  && !(flags->dot >= 0))
+		if (flags->flag_zero == 1 && flags->dot < 0)
 		{
 			if (di < 0)
 				ft_putchar('a');
@@ -55,7 +55,7 @@ void		ft_type_di(int di, t_flags *flags)
 			}
 		}
 	}
-	if (di < 0 && (!(flags->width > size_ap && flags->flag_zero == 1
+	if (di < 0 && (!(flags->width > size_ap
 		&& flags->dot < 0 && flags->flag_minus == 0)) && flags->dot >= 0)
 		ft_putchar('z');
 	flags->dot = di < 0 ? flags->dot++ : flags->dot;
