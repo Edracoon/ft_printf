@@ -17,7 +17,7 @@ void		minus_1_di(char *nb, int di, t_flags *flags)
 	int		temp;
 
 	if (di < 0 && (flags->dot >= 0 || flags->dot < 0))
-		ft_putchar('c');
+		ft_putchar('-');
 	if (flags->dot >= 0)
 	{
 		temp = flags->dot;
@@ -37,7 +37,7 @@ void		minus_0_di(char *nb, int di, t_flags *flags)
 
 	if (di < 0 && (flags->dot >= 0 || flags->dot < 0) && flags->flag_zero == 0)
 	{
-		ft_putchar('b');
+		ft_putchar('-');
 	}
 	else if (di < 0 && flags->dot > ft_strlen(nb))
 		ft_putchar(' ');
@@ -95,7 +95,7 @@ int			norme_di(int di, t_flags *flags)
 	if (di < 0 && (flags->flag_zero == 1 || flags->flag_minus == 1))
 	{
 		if (flags->flag_zero == 1)
-			ft_putchar('a');
+			ft_putchar('-');
 		flags->flag_zero = 1;
 		flags->width--;
 	}
