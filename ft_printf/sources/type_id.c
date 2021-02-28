@@ -30,7 +30,7 @@ void		ft_type_di(int di, t_flags *flags)
 	}
 	else
 		nb = ft_itoa(di);
-	//flags->width = di < 0 ? flags->width - 1 : flags->width;
+	flags->width = di < 0 ? flags->width - 1 : flags->width;
 	size_ap = (flags->dot <= ft_strlen(nb) || flags->dot < 0) ? ft_strlen(nb) : flags->dot;
 	if (flags->dot == 0 && di == 0)
 		size_ap = 0;
