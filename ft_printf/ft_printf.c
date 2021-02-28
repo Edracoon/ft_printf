@@ -114,14 +114,14 @@ int				ft_printf(const char *str, ...)
 
 int	main(void)
 {
-	int a = -2;
+	int a = 1;
 	int b;
 
-	while (a < 5)
+	while (a < 7)
 	{
 		printf("Boucle avec a = %i\n\n", a);
-		b = -2;
-		while (b < 5)
+		b = 1;
+		while (b < 7)
 		{
 			printf("Boucle avec b = %i\n\n", b);
 			printf("lui : |%*.*i| |%*.*d| |%*.*d| |%*.*d| |%*.*d| |%*.*d| |%*.*d|\n", a, b, 8, a, b, -12, a, b, 123456789, a, b, 0, a, b, -12345678, a, b, 'a', a, b, 2147483647);
