@@ -28,6 +28,8 @@ typedef struct	s_flags
 	char		type;
 }				t_flags;
 
+t_flags			*struct_init(t_flags *flags);
+
 int				ft_printf(const char *str, ...);
 void			ft_type_di(int argu, t_flags *flags);
 void			ft_type_c(int argu, t_flags *flags);
