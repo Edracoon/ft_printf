@@ -110,7 +110,7 @@ int				ft_printf(const char *str, ...)
 	va_end(args);
 	return (g_count);
 }
-/*
+
 int	main(void)
 {
 	int a = 1;
@@ -134,4 +134,4 @@ int	main(void)
 		a++;
 	}
 	return (0);
-}*/
+}
