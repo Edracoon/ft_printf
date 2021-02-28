@@ -95,8 +95,8 @@ int			norme_di(int di, t_flags *flags)
 	}
 	if (di < 0 && (flags->dot >= 0 || flags->flag_zero == 1 || flags->flag_minus == 1))
 	{
-		if ((flags->flag_zero == 1 || flags->flag_minus == 1) && flags->dot < 0)
-			ft_putchar('z');
+		if ((flags->flag_zero == 1 || flags->flag_minus == 1) && (!(flags->dot < 0)))
+			ft_putchar('-');
 		flags->flag_zero = 1;
 		flags->width--;
 	}
