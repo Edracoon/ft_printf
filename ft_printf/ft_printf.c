@@ -50,11 +50,6 @@ void			parse_flag(const char *str, int i, va_list args, t_flags *flags)
 {
 	while (str[i])
 	{
-		if (flags->width < 0)
-		{
-			flags->flag_minus = 1;
-			flags->width = -flags->width;
-		}
 		if (!ft_isdigit(str[i]) && !find_type(str[i])
 		&& !find_flag(str[i]))
 			break ;
