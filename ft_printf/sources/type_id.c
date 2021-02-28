@@ -39,7 +39,7 @@ void		minus_0_di(char *nb, int di, t_flags *flags)
 	{
 		ft_putchar('-');
 	}
-	else if (di < 0 && flags->dot > (ft_strlen(nb) + 1))
+	else if (di < 0 && flags->dot > (ft_strlen(nb)))
 		ft_putchar('c');
 	if (flags->dot >= 0)
 	{
