@@ -111,7 +111,7 @@ int				ft_printf(const char *str, ...)
 	return (g_count);
 }
 
-// yes
+/*
 int	main(void)
 {
 	int a = -2;
@@ -138,4 +138,4 @@ int	main(void)
 	//ft_printf("moi : %010i, %010d, %010i, %010d\n", -12, -12345678, -36, -21474836);
 	return (0);
 }
-
+*/
