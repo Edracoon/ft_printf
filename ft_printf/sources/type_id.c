@@ -110,7 +110,19 @@ void		ft_type_di(int di, t_flags *flags)
 	char	*nb;
 	int		size_ap;
 
-	nb = ft_itoa(di);
+	if (di < 0)
+	{
+		if (di == -2147483648)
+			nb = ft_itoa(2147483648);
+		else
+		{
+			di = di * -1;
+			nb = ft_itoa(di);
+			di = di * -1;
+		}
+	}
+	else
+		nb = ft_itoa(di);
 	flags->width = di < 0 ? flags->width - 1 : flags->width;
 	size_ap = (flags->dot <= ft_strlen(nb) || flags->dot < 0) ? ft_strlen(nb) : flags->dot;
 	if (flags->dot == 0 && di == 0)
@@ -136,7 +148,7 @@ void		ft_type_di(int di, t_flags *flags)
 			}
 		}
 	}
-	if (di < 0 && ((flags->width > size_ap && flags->flag_zero == 1
+	if (di < 0 && (!(flags->width > size_ap && flags->flag_zero == 1
 		&& flags->dot < 0 && flags->flag_minus == 0)))
 		ft_putchar('-');
 	flags->dot = di < 0 ? flags->dot++ : flags->dot;
