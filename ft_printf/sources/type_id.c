@@ -12,10 +12,9 @@
 
 #include "../includes/ft_printf.h"
 
-void		ft_type_di(int di, t_flags *flags)
+char		*itoa_do(int di)
 {
-	char	*nb;
-	int		size_ap;
+	char *nb;
 
 	if (di < 0)
 	{
@@ -30,8 +29,19 @@ void		ft_type_di(int di, t_flags *flags)
 	}
 	else
 		nb = ft_itoa(di);
+		return (nb);
+}
+
+void		ft_type_di(int di, t_flags *flags)
+{
+	char	*nb;
+	int		size_ap;
+	int		i;
+
+	nb = itoa_di(di);
+	i = ft_strlen(nb);
 	flags->width = di < 0 ? flags->width - 1 : flags->width;
-	size_ap = (flags->dot <= ft_strlen(nb) || flags->dot < 0) ? ft_strlen(nb) : flags->dot;
+	size_ap = (flags->dot <= i || flags->dot < 0) ? i : flags->dot;
 	if (flags->dot == 0 && di == 0)
 		size_ap = 0;
 	if (flags->flag_minus == 0 && flags->width > size_ap)
@@ -61,14 +71,14 @@ void		ft_type_di(int di, t_flags *flags)
 	flags->dot = di < 0 ? flags->dot++ : flags->dot;
 	if (flags->dot > ft_strlen(nb))
 	{
-		while (flags->dot - ft_strlen(nb) > 0)
+		while (flags->dot - i > 0)
 		{
 			ft_putchar('0');
 			flags->dot--;
 		}
 	}
 	if (!(di == 0 && flags->dot == 0))
-		ft_putstr(nb, ft_strlen(nb));
+		ft_putstr(nb, i);
 	if (flags->flag_minus > 0 && flags->width > size_ap)
 	{
 		while (flags->width - size_ap > 0)
