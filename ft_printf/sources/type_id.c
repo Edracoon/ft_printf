@@ -38,7 +38,7 @@ void		ft_type_di(int di, t_flags *flags)
 	{
 		if (flags->flag_zero == 1 && flags->dot < 0)
 		{
-			if (di < 0)
+			if (di < 0 && !(flags->dot >= 0))
 				ft_putchar('a');
 			while (flags->width - size_ap > 0)
 			{
