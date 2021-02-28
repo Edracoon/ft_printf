@@ -70,7 +70,6 @@ void			parse_flag(const char *str, int i, va_list args, t_flags *flags)
 		}
 		i++;
 	}
-	printf("\nflags : w: %i, d: %i, m: %i, z: %i : ", flags->width, flags->dot, flags->flag_minus, flags->flag_zero);
 	ft_check_type(args, flags);
 }
 
@@ -119,11 +118,15 @@ int	main(void)
 
 	printf("Boucle avec a = %i\n\n", a);
 	b = 1;
-	while (b < 3)
+	while (b < 7)
 	{
 		printf("Boucle avec b = %i\n\n", b);
 		printf("lui : %0*i, %0*d, %0*d, %0*d, %0*d, %0*d, %0*d, %0*d\n", a, 8, a, -12, a, 123456789, a, 0, a, -12345678, a, 'a', a, 2147483647, a, -21474836);
 		ft_printf("moi : %0*i, %0*d, %0*d, %0*d, %0*d, %0*d, %0*d, %0*d\n\n", a, 8, a, -12, a, 123456789, a, 0, a, -12345678, a, 'a', a, 2147483647, a, -21474836);
+		printf("lui : |%-*.*i| |%-*.*d| |%-*.*d| |%-*.*d| |%-*.*d| |%-*.*d| |%-*.*d|\n", a, b, 8, a, b, -12, a, b, 123456789, a, b, 0, a, b, -12345678, a, b, 'a', a, b, 2147483647);
+		ft_printf("moi : |%-*.*i| |%-*.*d| |%-*.*d| |%-*.*d| |%-*.*d| |%-*.*d| |%-*.*d|\n\n", a, b, 8, a, b, -12, a, b, 123456789, a, b, 0, a, b, -12345678, a, b, 'a', a, b, 2147483647);
+		printf("lui : |%0*.*i| |%0*.*d| |%0*.*d| |%0*.*d| |%0*.*d| |%0*.*d| |%0*.*d|\n", a, b, 8, a, b, -12, a, b, 123456789, a, b, 0, a, b, -12345678, a, b, 'a', a, b, 2147483647);
+		ft_printf("moi : |%0*.*i| |%0*.*d| |%0*.*d| |%0*.*d| |%0*.*d| |%0*.*d| |%0*.*d|\n\n", a, b, 8, a, b, -12, a, b, 123456789, a, b, 0, a, b, -12345678, a, b, 'a', a, b, 2147483647);
 		b++;
 	}
 	return (0);
