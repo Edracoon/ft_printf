@@ -59,6 +59,7 @@ void		dot_sup_0_di(int di, char *nb, t_flags *flags)
 	if (flags->dot >= 0)
 	{
 		flags->width -= flags->dot;
+		flags->width--;
 		while (flags->width > 0)
 		{
 			ft_putchar('b');
