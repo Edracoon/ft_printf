@@ -40,7 +40,7 @@ void		minus_0_di(char *nb, int di, t_flags *flags)
 		ft_putchar('-');
 	}
 	else if (di < 0 && flags->dot > ft_strlen(nb))
-		ft_putchar(' ');
+		ft_putchar('c');
 	if (flags->dot >= 0)
 	{
 		temp = flags->dot;
@@ -61,7 +61,7 @@ void		dot_sup_0_di(int di, char *nb, t_flags *flags)
 		flags->width -= flags->dot;
 		while (flags->width > 0)
 		{
-			ft_putchar(' ');
+			ft_putchar('a');
 			flags->width--;
 		}
 	}
@@ -74,7 +74,7 @@ void		dot_sup_0_di(int di, char *nb, t_flags *flags)
 			if (flags->flag_zero == 1 && flags->flag_minus == 0)
 				ft_putchar('0');
 			else
-				ft_putchar(' ');
+				ft_putchar('b');
 			flags->width--;
 		}
 	}
