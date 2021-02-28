@@ -55,7 +55,7 @@ void		ft_type_di(int di, t_flags *flags)
 			}
 		}
 	}
-	if (di < 0 && (!(flags->width > size_ap && flags->flag_zero == 1
+	if (di < 0 && (!(flags->width > size_ap && (!(flags->flag_zero == 1))
 		&& flags->dot < 0 && flags->flag_minus == 0)))
 		ft_putchar('-');
 	flags->dot = di < 0 ? flags->dot++ : flags->dot;
