@@ -31,7 +31,6 @@ void		flag_width(va_list args, t_flags *flags)
 	flags->width = va_arg(args, int);
 	if (flags->width < 0)
 	{
-		struct_init(flags);
 		flags->flag_minus = 1;
 		flags->width *= -1;
 		flags->flag_zero = 0;
