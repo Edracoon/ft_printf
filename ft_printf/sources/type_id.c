@@ -58,6 +58,8 @@ void		dot_sup_0_di(int di, char *nb, t_flags *flags)
 {
 	if (flags->dot >= 0)
 	{
+		if (flags->width > flags->dot)
+			flags->width--;
 		flags->width -= flags->dot;
 		while (flags->width > 0)
 		{
