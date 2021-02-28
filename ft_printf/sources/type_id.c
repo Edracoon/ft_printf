@@ -12,9 +12,9 @@
 
 #include "../includes/ft_printf.h"
 
-char		*itoa_do(int di)
+char		*itoa_di(int di)
 {
-	char *nb;
+	char	*nb;
 
 	if (di < 0)
 	{
@@ -29,7 +29,7 @@ char		*itoa_do(int di)
 	}
 	else
 		nb = ft_itoa(di);
-		return (nb);
+	return (nb);
 }
 
 void		ft_type_di(int di, t_flags *flags)
