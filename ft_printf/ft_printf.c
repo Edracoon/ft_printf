@@ -111,7 +111,7 @@ int				ft_printf(const char *str, ...)
 	return (g_count);
 }
 
-/*
+
 int	main(void)
 {
 	int a = -2;
@@ -134,8 +134,8 @@ int	main(void)
 		}
 		a++;
 	}
-	//printf(" lui : %010i, %010d, %010i, %010d\n", -12, -12345678, -36, -21474836);
-	//ft_printf("moi : %010i, %010d, %010i, %010d\n", -12, -12345678, -36, -21474836);
+	printf(" lui : %0i, %0d, %0i, %0d\n", -12, -12345678, -36, -21474836);
+	ft_printf("moi : %0i, %0d, %0i, %0d\n", -12, -12345678, -36, -21474836);
 	return (0);
 }
-*/
+
