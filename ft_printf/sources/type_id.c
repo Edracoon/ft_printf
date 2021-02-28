@@ -39,8 +39,6 @@ void		minus_0_di(char *nb, int di, t_flags *flags)
 	{
 		ft_putchar('-');
 	}
-	if (di < 0 && flags->dot > (ft_strlen(nb)))
-		ft_putchar('c');
 	if (flags->dot >= 0)
 	{
 		temp = flags->dot;
