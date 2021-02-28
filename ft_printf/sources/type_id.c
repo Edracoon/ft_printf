@@ -17,11 +17,6 @@ void		ft_type_di(int di, t_flags *flags)
 	char	*nb;
 	int		size_ap;
 
-	if (flags->width < 0)
-	{
-		flags->flag_minus = 1;
-		flags->width = -flags->width;
-	}
 	if (di < 0)
 	{
 		if (di == -2147483648)
