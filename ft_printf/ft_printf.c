@@ -113,7 +113,7 @@ int				ft_printf(const char *str, ...)
 
 int	main(void)
 {
-	int a = 7;
+	int a = 1;
 	int b;
 
 	while (a < 7)
