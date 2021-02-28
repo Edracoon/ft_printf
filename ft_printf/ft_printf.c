@@ -111,6 +111,7 @@ int				ft_printf(const char *str, ...)
 	return (g_count);
 }
 
+// yes
 int	main(void)
 {
 	int a = -2;
