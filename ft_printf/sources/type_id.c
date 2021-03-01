@@ -6,11 +6,46 @@
 /*   By: epfennig <epfennig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/26 11:37:50 by epfennig          #+#    #+#             */
-/*   Updated: 2021/02/26 15:37:12 by epfennig         ###   ########.fr       */
+/*   Updated: 2021/03/01 14:03:46 by epfennig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
+
+void		padding_di(int diff, char c)
+{
+	while (diff > 0)
+	{
+		ft_putchar(c);
+		diff--;
+	}
+}
+
+int			minus_0_di(int di, int size_ap, t_flags *flags)
+{
+	if (flags->flag_zero == 1 && flags->dot < 0)
+	{
+		if (di < 0)
+		{
+			ft_putchar('-');
+			di *= -1;
+		}
+		while (flags->width - size_ap > 0)
+		{
+			ft_putchar('0');
+			flags->width--;
+		}
+	}
+	else
+	{
+		while (flags->width - size_ap > 0)
+		{
+			ft_putchar(' ');
+			flags->width--;
+		}
+	}
+	return (di);
+}
 
 char		*itoa_di(int di)
 {
@@ -45,47 +80,16 @@ void		ft_type_di(int di, t_flags *flags)
 	if (flags->dot == 0 && di == 0)
 		size_ap = 0;
 	if (flags->flag_minus == 0 && flags->width > size_ap)
-	{
-		if (flags->flag_zero == 1 && flags->dot < 0)
-		{
-			if (di < 0)
-				ft_putchar('-');
-			while (flags->width - size_ap > 0)
-			{
-				ft_putchar('0');
-				flags->width--;
-			}
-		}
-		else
-		{
-			while (flags->width - size_ap > 0)
-			{
-				ft_putchar(' ');
-				flags->width--;
-			}
-		}
-	}
+		di = minus_0_di(di, size_ap, flags);
 	if (di < 0 && (!(flags->width > size_ap && flags->flag_zero == 1
 		&& flags->dot < 0 && flags->flag_minus == 0)))
 		ft_putchar('-');
 	flags->dot = di < 0 ? flags->dot++ : flags->dot;
 	if (flags->dot > ft_strlen(nb))
-	{
-		while (flags->dot - i > 0)
-		{
-			ft_putchar('0');
-			flags->dot--;
-		}
-	}
+		padding_di(flags->dot - i, '0');
 	if (!(di == 0 && flags->dot == 0))
 		ft_putstr(nb, i);
 	if (flags->flag_minus > 0 && flags->width > size_ap)
-	{
-		while (flags->width - size_ap > 0)
-		{
-			ft_putchar(' ');
-			flags->width--;
-		}
-	}
+		padding_di(flags->width - size_ap, ' ');
 	free(nb);
 }
