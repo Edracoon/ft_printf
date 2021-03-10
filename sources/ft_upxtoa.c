@@ -6,13 +6,13 @@
 /*   By: epfennig <epfennig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/23 12:41:51 by epfennig          #+#    #+#             */
-/*   Updated: 2021/02/26 15:13:19 by epfennig         ###   ########.fr       */
+/*   Updated: 2021/03/09 14:38:37 by epfennig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-int			ft_intlen2(long int nb, int base)
+int			ft_intlen2(unsigned long long nb, int base)
 {
 	int		len;
 
